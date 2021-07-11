@@ -1,0 +1,31 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'hourglassSum' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts 2D_INTEGER_ARRAY arr as parameter.
+#
+
+hourglass = []
+for arr_i in range(6):
+   arr_t = [int(arr_temp) for arr_temp in input().strip().split(' ')]
+   hourglass.append(arr_t)
+    
+sumslist = []
+
+def calculatesum(i,j):
+    return(hourglass[i][j] + hourglass[i][j+1] + hourglass[i][j+2] + hourglass[i+1][j+1] + hourglass[i+2][j] + hourglass[i+2][j+1] + hourglass[i+2][j+2])
+
+for j in range(0,4):
+    for i in range(0,4):
+        sum = calculatesum(i,j)
+        sumslist.append(sum)
+    
+print(max(sumslist))
