@@ -1,2 +1,2 @@
 # HAFTA-1
-ödevler
+ÖDEVLER-PYTHON3
